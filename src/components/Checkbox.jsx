@@ -1,10 +1,21 @@
 import React from "react";
 
-const Checkbox = () => {
-    return (
-        <div>
+const Checkbox = ({ label, checked, onChange, className }) => {
 
-        </div>
+    const handleChange = (e) => {
+        // Calling handleAllSelect only -> handleSelect has its own internal checking in App
+        onChange(e.target.checked);
+    }
+
+    return (
+        <label className={`flex items-center space-x-2 ${className}`}>
+            <input
+                type="checkbox"
+                checked={checked}
+                onChange={handleChange}
+            />
+            <span>{label}</span>
+        </label>
     )
 }
 
