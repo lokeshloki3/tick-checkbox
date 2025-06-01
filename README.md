@@ -1,12 +1,27 @@
-# React + Vite
+Demo - https://lokeshloki3.github.io/tick-checkbox/
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### Features
 
-Currently, two official plugins are available:
+1. **Customizable Checkbox**:
+   - The component takes the following props:
+     - `checked` (boolean): Controls the checked state of the checkbox.
+     - `onChange` (function): Callback to handle the state change when the checkbox is toggled.
+     - `label` (string): A label displayed next to the checkbox.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+2. **Select All Checkbox**:
+   - Includes a **"Select All"** checkbox that toggles the state of all child checkboxes.
+   - Toggling the "Select All" checkbox will check or uncheck all individual checkboxes.
 
-## Expanding the ESLint configuration
+3. **Individual Checkbox State**:
+   - Each checkbox maintains its own independent state, meaning it can be checked or unchecked individually.
+   - When any checkbox is toggled, its state updates independently from others.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+4. **Automatic "Select All" Checkbox State**:
+   - If any checkbox is unchecked, the **"Select All"** checkbox will be unchecked automatically.
+   - If all checkboxes are selected, the **"Select All"** checkbox will be checked.
+
+5. **Dynamic Checkbox Rendering**:
+   - The component loops through a `listItems` array to dynamically generate checkboxes.
+   - Each item in the `listItems` array contains:
+     - `label`: Text displayed next to the checkbox.
+     - `checked`: Boolean value indicating whether the checkbox is checked or not.
